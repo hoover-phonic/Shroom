@@ -6,8 +6,11 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "add": "^2.0.6",
@@ -20,7 +23,10 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
     "currencyformatter.js": "^2.2.0",
+    "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^0.11.2",
     "moment": "^2.29.0",
     "node-sass": "4.14.1",
     "normalize.css": "8.0.1",
