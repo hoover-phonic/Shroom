@@ -1,0 +1,22 @@
+.text-input {
+  border: 1px solid #cacccd;
+  height: 49px;
+  font-size: $font-size-large;
+  font-weight: 300;
+  padding: $s-size;
+  border-radius: 5px;
+}
+
+.select {
+  @extend .text-input;
+}
+
+.text-input:focus {
+  // outline-color: #718096;
+  outline-color: #008489;
+}
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+}

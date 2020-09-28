@@ -1,0 +1,10 @@
+.footer {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+  color:  darken($color:  #f7e9e9, $amount: 30%);
+}

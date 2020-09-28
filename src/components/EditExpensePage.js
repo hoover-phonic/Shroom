@@ -7,19 +7,31 @@ import { editExpense, removeExpense } from '../actions/expenses';
 const EditExpensePage = (props) => {
   return(
     <div>
-      <ExpenseForm 
-        expense = {props.expense}
-        onSubmit = {(expense) =>{
-          props.dispatch(editExpense(props.expense.id,
-            expense));
+      <div className="subtitle">
+        <div className="content-container">
+          <h1 className="subtitle__title">Edit Expense</h1>
+        </div>
+      </div>
+      <div className="content-container">
+        <ExpenseForm 
+          expense = {props.expense}
+          onSubmit = {(expense) =>{
+            props.dispatch(editExpense(props.expense.id,
+              expense));
+            props.history.push('/');
+            console.log('updated', expense);
+          }}
+        />
+        <button 
+        className="button button--secondary"
+        onClick={() => {
+          props.dispatch(removeExpense({ id : props.expense.id }));
           props.history.push('/');
-          console.log('updated', expense);
-        }}
-      />
-      <button onClick={() => {
-        props.dispatch(removeExpense({ id : props.expense.id }));
-        props.history.push('/');
-      }}>Remove</button>
+        }}>Remove Expense</button>
+      </div>
+      <div className="content-container">
+        
+      </div>
     </div>
   );
 };

@@ -1,3 +1,19 @@
 .button {
-  background: $button;
+  background: #68D391;
+  color: white;
+  border: none;
+  padding: $s-size;
+  font-weight: 300;
+  font-size: $font-size-large;
+  display: inline-block;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.button:focus {
+  outline-color: #718096;
+}
+
+.button--secondary {
+  background: #E53E3E;
 }
